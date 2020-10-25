@@ -25,9 +25,10 @@ func CreatingQRgrid(numberOfQRcodes, QRWidth, QRHeight, bgWidth, bgHeight int) {
 	
 	setXoffset, setYoffset := settingOffset(QRWidth,QRHeight,bgWidth,bgHeight)
 	
-
+	fmt.Println("\nDrawing Grid")
 	for x := 0; x < counter; x++ {
 
+		
 		QRimage = "./out/test"+ strconv.Itoa(x) +".png"
 		in := []*gim.Grid{
 
@@ -46,11 +47,11 @@ func CreatingQRgrid(numberOfQRcodes, QRWidth, QRHeight, bgWidth, bgHeight int) {
 		grids = append(grids, in...)
 
 		//fmt.Println(fn)
-		fmt.Println(grids)
+		fmt.Print(".")
 
 	}
 
-	fmt.Println("Creating Grid......")
+	fmt.Println("\nCreating Grid......")
 	rgba, err := gim.New(grids, num, num,
 		gim.OptBaseDir("./"),
 	).Merge()

@@ -14,7 +14,7 @@ import (
 
 func QRcode(numberOfQrcodes,QRwidth,QRheight int) {
 	
-	
+	fmt.Println("Creating QR Codes")
 	num := numberOfQrcodes*numberOfQrcodes
 	for x := 0; x < num; x++ {
 	n,err := rn.Uint16()
@@ -24,7 +24,7 @@ func QRcode(numberOfQrcodes,QRwidth,QRheight int) {
 
 	// Create the barcode
 	qrCode, _ := qr.Encode(strconv.Itoa(int(n)), qr.M, qr.Auto)
-	fmt.Println(strconv.Itoa(int(n)))
+	fmt.Print(".")
 
 	// Scale the barcode to 200x200 pixels
 	qrCode, _ = barcode.Scale(qrCode, QRwidth, QRheight)
