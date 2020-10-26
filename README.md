@@ -7,6 +7,9 @@ after building the file you can use the following arguments to run the program
 
    "-BGsize int" For Size of Background Image Width and Height in Pixels
    
+   "-Output string" 
+        This is output path of the Image, Default path is the program folder (default "./")
+   
   "-QRnum int" For Number of QRcodes
   
   "-QRsize int" For Size of QRcodes Width and Height in Pixels
@@ -14,8 +17,10 @@ after building the file you can use the following arguments to run the program
  Example of the full command should look something like this:
  
     .\MainCLI -BGsize 350 -QRnum 6 -QRsize 125
+    or
+    .\MainCLI -BGsize 350 -QRnum 6 -QRsize 125 -Output '.\OutputFolder'
     
- An image called QRgrid.png will be made in the same folder as the program, that image is the final result
+ An image called QRgrid.png will be made in the same folder as the program if -Output is not set, that image is the final result
     
 .
 
