@@ -66,6 +66,14 @@ func CreatingQRgrid(numberOfQRcodes, QRWidth, QRHeight, bgWidth, bgHeight int, O
 		fmt.Println(err)
 		os.Exit(1)
 	}
+
+	//removing Temp Output folder
+	err = os.RemoveAll("out")
+	if err != nil {
+		fmt.Println(err)
+		fmt.Println("Output image has been saved but program could not delete the Output temp folder")
+		os.Exit(1)
+	}
 	fmt.Println("Done!! \nYou can now open the new image called: QRgrid.png")
 
 }
